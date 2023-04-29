@@ -7,6 +7,7 @@ import App from './App';
 import Background from './pages/Background';
 import NavBar from './pages/NavBar';
 import Body from './pages/Body';
+import AboutMe from './components/AboutMe';
 
 //? STYLES
 import './index.css';
@@ -21,6 +22,7 @@ root.render(
       <Background />
       <NavBar />
       <Body />
+      <AboutMe />
     </div>
     </>
 );

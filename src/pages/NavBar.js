@@ -18,8 +18,8 @@ const NavBar = () => {
             <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'space-evenly', width: '30%'}}>
                 <a href='/' style={{color: 'white', textDecoration: 'none', fontSize: 24}}>Home</a>
                 <a href='/' style={{color: 'white', textDecoration: 'none', fontSize: 24}}>Projects</a>
-                <a href='/' style={{color: 'white', textDecoration: 'none', fontSize: 24}}>About Me</a>
                 <a href='/' style={{color: 'white', textDecoration: 'none', fontSize: 24}}>Contact</a>
+                <a href='/' style={{color: 'white', textDecoration: 'none', fontSize: 24}}>About Me</a>
             </div>
             
         </div>

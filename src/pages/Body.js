@@ -6,6 +6,8 @@ import Box from '@mui/material/Box';
 
 //? COMPONENTS
 import Hero from '../components/Hero';
+import Projects from '../components/Projects';
+import Contact from '../components/Contact';
 
 import babby from '../assets/babby.png'
 
@@ -15,36 +17,35 @@ const Body = () => {
         <>
         {/*low opacity underlay box */}
         <Box sx={{
-            width: '98vw',
-            height: '90vh',
             padding: 0,
-            marginLeft: '1%',
-            marginRight: '2%',
-            backgroundColor: 'primary.dark',
-            opacity: 0.1,
-            position: 'fixed',
-            zIndex: -1
-          }} />
+            position: 'relative',
+            minHeight: '100%',            
             
-        <Box sx={{
-            width: '98vw',
-            height: '90vh',
-            padding: 0,
-            marginLeft: '1%',
-            marginRight: '1%',
-            opacity: 1,
-            position: 'fixed',
-            zIndex: 1
-          }} >
-            {/* <span style={{color: 'white', position: 'relative', zIndex: 1}}>Hello</span>
-            <img src={babby} style={{height: '200px'}}></img> */}
-            <Hero />
-          </Box>
-          
+            '&::before': {
+                content: "''",
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                zIndex: -1,
+                background: 'linear-gradient(to bottom, rgba(255, 255, 255, 0) 30%, #19376D 90%)',
+            }
+          }}>
 
-          
-          
-          
+            <Box sx={{
+                width: '98vw',
+                height: 'auto',
+                padding: 0,
+                opacity: 1,
+                position: 'relative',
+                zIndex: 1
+                }}>
+                    <Hero />
+                    <Projects />
+                    <Contact />
+            </Box>
+        </Box>
           </>
     );
 }
