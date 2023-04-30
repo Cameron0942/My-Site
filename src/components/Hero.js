@@ -7,10 +7,16 @@ const Hero = () => {
 
     return(
         <>
-            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: 150, paddingLeft: 25}}>
-                <span style={{color: "white", maxWidth: '100ch', fontSize: 24, textShadow: '3px 3px black'}}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </span>
+            <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', paddingTop: 150, paddingLeft: '14%', marginBottom: 400}}>
+                <div>
+                    <p className='hello-world' style={{color: '#9d9ea8', opacity: 0.8, fontSize: '1.5em', textShadow: '1px 1px black'}}>Hello, World!</p>
+                    <h1 style={{color: 'white', textShadow: '3px 3px black', fontSize: '2.5em', margin: 0}}>I'm Cameron Burns</h1>
+                    <h2 style={{color: '#9d9ea8', textShadow: '3px 3px black', fontSize: '2em', margin: 0}}>I build things for the client and server-side of the Web.</h2>
+                    <p style={{color: "#ededf1", maxWidth: '100ch', fontSize: '1.5em', textShadow: '3px 3px black'}}>
+                        I'm a Fullstack developer committed to creating functional and useful Web Applications. <b>I'm currently looking for new opportunities!</b>
+                    </p>
+                </div>
+                
                 
                 <HeroCube />
             </div>

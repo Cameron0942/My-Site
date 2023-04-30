@@ -83,6 +83,7 @@ const HeroCube = () => {
       // If the cube has completed one full revolution on its y-axis, start rotating on the x-axis
       if (cube.rotation.y >= Math.PI * 2) {
 
+        // replace JS logo with flipped version
         materials[5] = materialLeftUpsidedown;
         
         // Rotate the cube on its x-axis
@@ -90,6 +91,7 @@ const HeroCube = () => {
         
         // if the cube has completed an x-axis rotation, reset the y-axis
         if (cube.rotation.x >= Math.PI * 2) {
+          // replace JS logo with right side up version
           materials[5] = materialLeft;
           cube.rotation.y = 0;
           cube.rotation.x = 0;

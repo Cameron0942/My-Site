@@ -29,7 +29,7 @@ const Body = () => {
                 width: '100%',
                 height: '100%',
                 zIndex: -1,
-                background: 'linear-gradient(to bottom, rgba(255, 255, 255, 0) 30%, #19376D 90%)',
+                background: 'linear-gradient(to bottom, rgba(255, 255, 255, 0) , #19376D 50%)',
             }
           }}>
 
