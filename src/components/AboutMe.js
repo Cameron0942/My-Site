@@ -27,7 +27,7 @@ const AboutMe = () => {
     
     return (
         <>
-        <div id='fade-underlayID' className='fade-underlay' style={{height: '145vh', margin: '0 0 0 0', textAlign: 'center', textShadow: '1px 1px black', background: isBottom ? '' : 'linear-gradient(to top, rgba(255, 255, 255, 0) 15%, #19376D 75%)'}}>
+        <div id='about-me' style={{height: '145vh', margin: '0 0 0 0', textAlign: 'center', textShadow: '1px 1px black', background: isBottom ? '' : 'linear-gradient(to top, rgba(255, 255, 255, 0) 15%, #19376D 75%)'}}>
             <div style={{width: '75ch', margin: '0 auto', paddingTop: 60}}>
                 <h1 style={{color: '#F7F7F7', textShadow: '1px 1px black', textDecoration: 'underline', textDecorationThickness: '2px', textUnderlineOffset: '10px', textDecorationColor: '#ba2649'}}>About Me</h1>
                 <p style={{color: '#F7F7F7', marginTop: 20, fontSize: '1.3rem'}}>

@@ -31,7 +31,7 @@ const Contact = () => {
 
     return (
         <>
-            <div style={{textAlign: 'center', width: '60ch', margin: '0 auto', borderBottom: '2px black solid'}}>
+            <div id='contact' style={{textAlign: 'center', width: '60ch', margin: '0 auto', borderBottom: '2px black solid'}}>
                 <h1 style={{color: '#F7F7F7', fontSize: '2.5rem', textShadow: '1px 1px black', textDecoration: 'underline', textDecorationThickness: '2px', textUnderlineOffset: '10px', textDecorationColor: '#ba2649'}}>How do you do?</h1>
                 <h2 style={{color: '#9d9ea8', textShadow: '1px 1px black'}}>Let's get in touch</h2>
                 <p style={{color: '#F7F7F7', marginBottom: 18, fontSize: '1.5rem', textShadow: '1px 1px black'}}>I'm actively looking for new opportunities. But even if you don't have a job offer for me, I'd appreciate if you pass by just to say hi! Also, don't hesitate in letting me know any feedback or recommendations you have.</p>

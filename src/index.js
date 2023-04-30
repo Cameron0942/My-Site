@@ -23,6 +23,7 @@ root.render(
       <NavBar />
       <Body />
       <AboutMe />
+      
       <footer style={{ textAlign: 'center', color: 'white' , minHeight: '2rem'}}>Cameron Burns 2023 — <a href='https://github.com/Cameron0942/my-site' target='_blank'  rel='noreferrer' style={{color: '#E6C892', textDecoration: 'none'}}>Designed & Coded by Cameron0942</a></footer>
     </div>
     

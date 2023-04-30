@@ -16,7 +16,7 @@ const Projects = () => {
 
     return (
         <>
-            <h1 style={{color: '#F7F7F7', fontSize: '2.5rem', textShadow: '1px 1px black', textDecoration: 'underline', textDecorationThickness: '2px', textUnderlineOffset: '10px', textDecorationColor: '#ba2649', textAlign: 'center', marginBottom: 25}}>Featured Projects</h1>
+            <h1 id='projects' style={{color: '#F7F7F7', fontSize: '2.5rem', textShadow: '1px 1px black', textDecoration: 'underline', textDecorationThickness: '2px', textUnderlineOffset: '10px', textDecorationColor: '#ba2649', textAlign: 'center', marginBottom: 25}}>Featured Projects</h1>
             <Grid container spacing={2} sx={{alignItems: 'center', marginLeft: 'auto', marginRight: 'auto', marginBottom: 25}}>
                 <Grid item xs={6}>
                     <div style={{paddingLeft: 350}}>
