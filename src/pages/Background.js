@@ -8,6 +8,9 @@ const redTexture = require('../assets/redTexture.jpg');
 const stoneTexture = require('../assets/stoneTexture.jpg');
 const greenTexture = require('../assets/greenTexture.jpg');
 const sunTexture = require('../assets/sunTexture.jpg');
+const sunTextureBetter = require('../assets/sunTextureBetter.jpg');
+const blueTexture = require('../assets/blueTexture.jpg');
+const pinkTexture = require('../assets/pinkTexture.jpg');
 
 const Background = () => {
   const containerRef = useRef(null);
@@ -65,8 +68,8 @@ const Background = () => {
 
     // Load the texture image
       const sphereTextureLoader = new THREE.TextureLoader();
-      const sphereTexture = sphereTextureLoader.load(redTexture);
-      const sphereTexture2 = sphereTextureLoader.load(stoneTexture);
+      const sphereTexture = sphereTextureLoader.load(blueTexture);
+      const sphereTexture2 = sphereTextureLoader.load(pinkTexture);
       const sphereTexture3 = sphereTextureLoader.load(greenTexture);
     // create a new material for the planets
     const planetMaterials = [
@@ -93,7 +96,7 @@ const Background = () => {
         planets.push(planet);
       }
   
-      const sunTexture2 = sphereTextureLoader.load(sunTexture);
+      const sunTexture2 = sphereTextureLoader.load(sunTextureBetter);
       // create a new material for the sun
       const sunMaterial = new THREE.MeshStandardMaterial({ map: sunTexture2});
   
@@ -131,6 +134,7 @@ const Background = () => {
         planet.position.x = orbitRadius * Math.sin(orbitAngle) * Math.cos(planetAngle);
         planet.position.y = orbitRadius * Math.sin(orbitAngle) * Math.sin(planetAngle);
         planet.position.z = orbitRadius * Math.cos(orbitAngle);
+        planet.rotation.y += 0.003
 
         const cameraOrbitSpeed = (i + 1) * 0.0000000003;
         const cameraOrbitAngle = cameraOrbitSpeed * cameraTime;
@@ -151,6 +155,7 @@ const Background = () => {
         }
         }
         
+        sun.rotation.y += 0.001
 
   
         // render the scene
