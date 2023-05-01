@@ -1,50 +1,106 @@
 //? REACT
-import React, { useRef, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 //? MATERIAL UI
 import Box from '@mui/material/Box';
 
 //? COMPONENTS
 import Hero from '../components/Hero';
+import Projects from '../components/Projects';
+import Contact from '../components/Contact';
 
-import babby from '../assets/babby.png'
+//? IMAGES
+const github = require('../assets/github-icon.svg').default;
+const linkedin = require('../assets/linkedin-icon.svg').default;
+const githubWhite = require('../assets/github-white-icon.svg').default;
+const linkedinWhite = require('../assets/linkedin-white-icon.svg').default;
+
+const copyToClipboard = () => {
+    // Get the text field and value
+    let copyText = document.getElementById("click-email").innerText;
+
+    // Write text to clipboard
+    navigator.clipboard.writeText(copyText);
+
+  // Alert the copied text
+  alert("Email copied to clipboard");
+};
 
 const Body = () => {
+    const [isGitHovered, setIsGithovered] = useState(false);
+    const [isLinkedHovered, setIsLinkedhovered] = useState(false);
+    const [isEmailHovered, setIsEmailhovered] = useState(false);
+
+    //* Github hover
+    const handleGitMouseEnter = () => {
+        setIsGithovered(true);
+    };
+
+    const handleGitMouseLeave = () => {
+        setIsGithovered(false);
+    };
+
+    //* LinkedIn hover
+    const handleLinkedMouseEnter = () => {
+        setIsLinkedhovered(true);
+    };
+
+    const handleLinkedMouseLeave = () => {
+        setIsLinkedhovered(false);
+    };
+
+    //* Email hover
+    const handleEmailMouseEnter = () => {
+        setIsEmailhovered(true);
+    };
+
+    const handleEmailMouseLeave = () => {
+        setIsEmailhovered(false);
+    };
 
     return(
         <>
         {/*low opacity underlay box */}
         <Box sx={{
-            width: '98vw',
-            height: '90vh',
             padding: 0,
-            marginLeft: '1%',
-            marginRight: '2%',
-            backgroundColor: 'primary.dark',
-            opacity: 0.1,
-            position: 'fixed',
-            zIndex: -1
-          }} />
+            position: 'relative',
+            minHeight: '100%',            
             
-        <Box sx={{
-            width: '98vw',
-            height: '90vh',
-            padding: 0,
-            marginLeft: '1%',
-            marginRight: '1%',
-            opacity: 1,
-            position: 'fixed',
-            zIndex: 1
-          }} >
-            {/* <span style={{color: 'white', position: 'relative', zIndex: 1}}>Hello</span>
-            <img src={babby} style={{height: '200px'}}></img> */}
-            <Hero />
-          </Box>
-          
+            '&::before': {
+                content: "''",
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                zIndex: -1,
+                background: 'linear-gradient(to bottom, rgba(255, 255, 255, 0) , #19376D 50%)',
+            }
+          }}>
 
-          
-          
-          
+            <Box sx={{
+                width: '98vw',
+                height: 'auto',
+                padding: 0,
+                opacity: 1,
+                position: 'relative',
+                zIndex: 1
+                }}>
+                    <aside style={{height: '88vh', left: '0.5em', color: 'white', position: 'fixed', zIndex: 10, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end'}}>
+                        <a onMouseEnter={handleGitMouseEnter} onMouseLeave={handleGitMouseLeave} href='https://github.com/Cameron0942' target='_blank' rel='noreferrer'><img src={ isGitHovered ? githubWhite : github } alt='github link' style={{}} /></a>
+                        <a onMouseEnter={handleLinkedMouseEnter} onMouseLeave={handleLinkedMouseLeave} href='https://www.linkedin.com/in/cameron--burns/' target='_blank' rel='noreferrer'><img src={ isLinkedHovered ? linkedinWhite : linkedin } alt='linkedin link' style={{}} /></a>
+                        <div style={{width: '2px', height: '8em', backgroundColor: 'black', marginLeft: 'auto', marginRight: 'auto'}} />
+                    </aside>
+
+                    <aside style={{height: '88vh', right: '0.5em', color: 'white', position: 'fixed', zIndex: 10, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end'}}>
+                        <span onMouseEnter={handleEmailMouseEnter} onMouseLeave={handleEmailMouseLeave} onClick={copyToClipboard} target='_blank' rel='noreferrer' style={{transform: 'rotate(90deg)', marginBottom: 90, textDecoration: 'none', color: isEmailHovered ? 'white' : 'black', cursor: 'pointer', paddingTop: '15px', paddingBottom: '15px', paddingRight: 0, paddingLeft: 0}}><p id='click-email'>burnsc0942@gmail.com</p></span>
+                        <div style={{width: '2px', height: '8em', backgroundColor: 'black', marginLeft: 'auto', marginRight: 'auto'}} />
+                    </aside>
+                    <Hero />
+                    <Projects />
+                    <Contact />
+            </Box>
+        </Box>
           </>
     );
 }

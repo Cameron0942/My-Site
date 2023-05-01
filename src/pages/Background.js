@@ -2,6 +2,15 @@ import React, { useRef, useEffect, useState } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
+//? IMAGES
+const babby = require('../assets/babby.png');
+const stoneTexture = require('../assets/stoneTexture.jpg');
+const greenTexture = require('../assets/greenTexture.jpg');
+const sunTexture = require('../assets/sunTexture.jpg');
+const sunTextureBetter = require('../assets/sunTextureBetter.jpg');
+const blueTexture = require('../assets/blueTexture.jpg');
+const pinkTexture = require('../assets/pinkTexture.jpg');
+
 const Background = () => {
   const containerRef = useRef(null);
   const windowHeight = useState(window.innerHeight);
@@ -56,11 +65,16 @@ const Background = () => {
     scene.add(sphere);
     }
 
+    // Load the texture image
+      const sphereTextureLoader = new THREE.TextureLoader();
+      const sphereTexture = sphereTextureLoader.load(blueTexture);
+      const sphereTexture2 = sphereTextureLoader.load(pinkTexture);
+      const sphereTexture3 = sphereTextureLoader.load(greenTexture);
     // create a new material for the planets
     const planetMaterials = [
-        new THREE.MeshStandardMaterial({ color: 0xff0000, roughness: 0.5, metalness: 0.5 }),
-        new THREE.MeshStandardMaterial({ color: 0x00ff00, roughness: 0.5, metalness: 0.5 }),
-        new THREE.MeshStandardMaterial({ color: 0x0000ff, roughness: 0.5, metalness: 0.5 }),
+        new THREE.MeshStandardMaterial({ map: sphereTexture }),
+        new THREE.MeshStandardMaterial({ map: sphereTexture2 }),
+        new THREE.MeshStandardMaterial({ map: sphereTexture3 }),
         new THREE.MeshStandardMaterial({ color: 0xff0000, roughness: 0.5, metalness: 0.5 }),
         new THREE.MeshStandardMaterial({ color: 0x00ff00, roughness: 0.5, metalness: 0.5 }),
         new THREE.MeshStandardMaterial({ color: 0x0000ff, roughness: 0.5, metalness: 0.5 }),
@@ -81,9 +95,9 @@ const Background = () => {
         planets.push(planet);
       }
   
-      const textureLoader = new THREE.TextureLoader();
+      const sunTexture2 = sphereTextureLoader.load(sunTextureBetter);
       // create a new material for the sun
-      const sunMaterial = new THREE.MeshStandardMaterial({ color: 0xffff00, roughness: 1, metalness: 0});
+      const sunMaterial = new THREE.MeshStandardMaterial({ map: sunTexture2});
   
       // create a new geometry for the sun
       const sunGeometry = new THREE.SphereGeometry(2, 32, 32);
@@ -103,6 +117,7 @@ const Background = () => {
         // make the planets orbit around the sun
         // planet relative orbit time
         const time = Date.now() * 0.0008;
+        // const time2 = Date.now() * 0.00008;
         const orbitRadius = 10;
 
         // camera relative orbit time
@@ -113,12 +128,14 @@ const Background = () => {
         const orbitSpeed = (i + 1) * 0.01;
         
         const orbitAngle = orbitSpeed * time;
+        // const orbitAngle2 = orbitSpeed * time2;
         
         const planetRadius = 0.5;
         const planetAngle = orbitAngle * (i + 1);
         planet.position.x = orbitRadius * Math.sin(orbitAngle) * Math.cos(planetAngle);
         planet.position.y = orbitRadius * Math.sin(orbitAngle) * Math.sin(planetAngle);
         planet.position.z = orbitRadius * Math.cos(orbitAngle);
+        planet.rotation.y += 0.003
 
         const cameraOrbitSpeed = (i + 1) * 0.0000000003;
         const cameraOrbitAngle = cameraOrbitSpeed * cameraTime;
@@ -139,6 +156,7 @@ const Background = () => {
         }
         }
         
+        sun.rotation.y += 0.001
 
   
         // render the scene

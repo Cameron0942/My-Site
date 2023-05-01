@@ -5,13 +5,13 @@ import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
 //? IMAGES
-import textureTop from '../assets/react_logo.png';
-import textureBottom from '../assets/mongodb_logo.png';
-import textureFront from '../assets/expressjs_logo.png';
-import textureBack from '../assets/node_logo.png';
-import textureLeft from '../assets/js_logo.png';
-import textureRight from '../assets/react_logo.png';
-import JSUpsidedown from '../assets/js_logo(-1).png';
+const reactTexture = require('../assets/reactTexture.svg').default;
+const expressTexture = require('../assets/expressTexture.svg').default;
+const nodeTexture = require('../assets/nodeTexture.svg').default;
+const mongodbTexture = require('../assets/mongodbTexture.svg').default;
+const javascriptTexture = require('../assets/javascriptTexture.svg').default;
+const javascriptTextureInvert = require('../assets/javascriptTexture-invert.svg').default;
+const reduxTexture = require('../assets/reduxTexture.svg').default;
 
 const HeroCube = () => {
   const mountRef = useRef(null);
@@ -28,13 +28,13 @@ const HeroCube = () => {
     const material = new THREE.MeshPhongMaterial({ color: 0x00ff00 });
 
     // create materials for each face of the cube
-    const materialTop = new THREE.MeshPhongMaterial({ map: new THREE.TextureLoader().load(textureTop) });
-    const materialBottom = new THREE.MeshPhongMaterial({ map: new THREE.TextureLoader().load(textureBottom) });
-    const materialFront = new THREE.MeshPhongMaterial({ map: new THREE.TextureLoader().load(textureFront) });
-    const materialBack = new THREE.MeshPhongMaterial({ map: new THREE.TextureLoader().load(textureBack) });
-    const materialLeft = new THREE.MeshPhongMaterial({ map: new THREE.TextureLoader().load(textureLeft) });
-    const materialRight = new THREE.MeshPhongMaterial({ map: new THREE.TextureLoader().load(textureRight) });
-    const materialLeftUpsidedown = new THREE.MeshPhongMaterial({ map: new THREE.TextureLoader().load(JSUpsidedown) });
+    const materialTop = new THREE.MeshPhongMaterial({ map: new THREE.TextureLoader().load(mongodbTexture) });
+    const materialBottom = new THREE.MeshPhongMaterial({ map: new THREE.TextureLoader().load(reduxTexture) });
+    const materialFront = new THREE.MeshPhongMaterial({ map: new THREE.TextureLoader().load(expressTexture) });
+    const materialBack = new THREE.MeshPhongMaterial({ map: new THREE.TextureLoader().load(nodeTexture) });
+    const materialLeft = new THREE.MeshPhongMaterial({ map: new THREE.TextureLoader().load(javascriptTexture) });
+    const materialRight = new THREE.MeshPhongMaterial({ map: new THREE.TextureLoader().load(reactTexture) });
+    const materialLeftUpsidedown = new THREE.MeshPhongMaterial({ map: new THREE.TextureLoader().load(javascriptTextureInvert) });
     const materialSides = new THREE.MeshPhongMaterial({ color: 0x00ff00 });
     
     // apply materials to specific faces of the cube
@@ -83,6 +83,7 @@ const HeroCube = () => {
       // If the cube has completed one full revolution on its y-axis, start rotating on the x-axis
       if (cube.rotation.y >= Math.PI * 2) {
 
+        // replace JS logo with flipped version
         materials[5] = materialLeftUpsidedown;
         
         // Rotate the cube on its x-axis
@@ -90,6 +91,7 @@ const HeroCube = () => {
         
         // if the cube has completed an x-axis rotation, reset the y-axis
         if (cube.rotation.x >= Math.PI * 2) {
+          // replace JS logo with right side up version
           materials[5] = materialLeft;
           cube.rotation.y = 0;
           cube.rotation.x = 0;

@@ -1,9 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway");
+@import url("https://fonts.googleapis.com/css?family=Work Sans");
+@import url("https://fonts.googleapis.com/css?family=Spline Sans Mono");
+@import url("https://fonts.googleapis.com/css?family=Inter");
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
 }
 
 .background {
@@ -16,4 +20,22 @@ body {
 .foreground {
   position: relative;
   z-index: 1;
+}
+
+h1 {
+  margin: 0;
+  text-shadow: '3px 3px black';
+}
+
+p {
+  margin: 0;
+  text-shadow: '3px 3px black';
+}
+
+footer {
+  font-family: 'Work Sans', sans-serif;
+}
+
+.hello-world {
+  font-family: 'Spline Sans Mono', monospace;
 }
