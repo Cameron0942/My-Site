@@ -5,13 +5,6 @@ import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
 //? IMAGES
-import textureTop from '../assets/react_logo.png';
-import textureBottom from '../assets/mongodb_logo.png';
-import textureFront from '../assets/expressjs_logo.png';
-import textureBack from '../assets/node_logo.png';
-import textureLeft from '../assets/js_logo.png';
-import textureRight from '../assets/react_logo.png';
-import JSUpsidedown from '../assets/js_logo(-1).png';
 const reactTexture = require('../assets/reactTexture.svg').default;
 const expressTexture = require('../assets/expressTexture.svg').default;
 const nodeTexture = require('../assets/nodeTexture.svg').default;

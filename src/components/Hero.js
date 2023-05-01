@@ -15,6 +15,9 @@ const Hero = () => {
                     <p style={{color: "#ededf1", maxWidth: '100ch', fontSize: '1.5em', textShadow: '3px 3px black'}}>
                         I'm a Fullstack developer committed to creating functional and useful Web Applications. <b>I'm currently looking for new opportunities!</b>
                     </p>
+                    <p style={{color: "#ededf1", maxWidth: '100ch', fontSize: '1.5em', textShadow: '3px 3px black'}}>
+                        [this website is a work in progress]
+                    </p>
                 </div>
                 
                 

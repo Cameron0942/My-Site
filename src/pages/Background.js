@@ -4,7 +4,6 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 //? IMAGES
 const babby = require('../assets/babby.png');
-const redTexture = require('../assets/redTexture.jpg');
 const stoneTexture = require('../assets/stoneTexture.jpg');
 const greenTexture = require('../assets/greenTexture.jpg');
 const sunTexture = require('../assets/sunTexture.jpg');
@@ -118,6 +117,7 @@ const Background = () => {
         // make the planets orbit around the sun
         // planet relative orbit time
         const time = Date.now() * 0.0008;
+        // const time2 = Date.now() * 0.00008;
         const orbitRadius = 10;
 
         // camera relative orbit time
@@ -128,6 +128,7 @@ const Background = () => {
         const orbitSpeed = (i + 1) * 0.01;
         
         const orbitAngle = orbitSpeed * time;
+        // const orbitAngle2 = orbitSpeed * time2;
         
         const planetRadius = 0.5;
         const planetAngle = orbitAngle * (i + 1);
