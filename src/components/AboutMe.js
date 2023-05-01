@@ -31,7 +31,7 @@ const AboutMe = () => {
             <div style={{width: '75ch', margin: '0 auto', paddingTop: 60}}>
                 <h1 style={{color: '#F7F7F7', textShadow: '1px 1px black', textDecoration: 'underline', textDecorationThickness: '2px', textUnderlineOffset: '10px', textDecorationColor: '#ba2649'}}>About Me</h1>
                 <p style={{color: '#F7F7F7', marginTop: 20, fontSize: '1.3rem'}}>
-                    My name is Cameron. I'm a fullstack web developer based in Nevada. I'm passionate about cutting-edge, pixel-perfect, responsive user interfaces, and dynamic user experiences.
+                    My name is Cameron. I'm a fullstack web developer based in Las Vegas, NV. I'm passionate about cutting-edge, pixel-perfect, responsive user interfaces, and dynamic user experiences.
                 </p>
                 <p style={{color: '#F7F7F7', marginTop: 20, fontSize: '1.3rem'}}>
                     My enthusiasm for web development began when I was teaching children the fundamentals of programming — at that time, I didn't imagine that tinkering with <b>HTML</b>, <b>CSS</b> and <b>JavaScript</b> could get this far, yet it turned out to be much more than that!
