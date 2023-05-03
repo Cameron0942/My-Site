@@ -1,8 +1,15 @@
 //? REACT
 import React, { useRef, useEffect, useState } from 'react';
 
+//? MATERIAL UI
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+
 //? IMAGES
 import babby from '../assets/babby.png'
+
+//? Responsive
+const theme = createTheme();
 
 const NavBar = () => {
     const [isHovered, setIsHovered] = useState({
@@ -11,6 +18,11 @@ const NavBar = () => {
         contact: false,
         aboutMe: false
     });
+
+    //* Responsive
+    const isLg = useMediaQuery(theme.breakpoints.up('lg'));
+    const isMd = useMediaQuery(theme.breakpoints.up('md'));
+    const isSm = useMediaQuery(theme.breakpoints.up('sm'));
 
     const handleMouseEnter = (id) => {
         
@@ -62,7 +74,8 @@ const NavBar = () => {
 
     return (
         <>
-            <div style={{backgroundColor: '#050816', opacity: 1, display: 'flex', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingTop: 8}}>
+        <ThemeProvider theme={theme}>
+            <div style={{backgroundColor: '#050816', opacity: 1, display: isLg ? 'flex' : 'none', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingTop: 8}}>
                 <div style={{paddingLeft: 20}}>
                     {/* <a href='/' style={{}}><img src={art} alt='home_logo' style={{height: '5rem', borderRadius: '50%'}}></img></a> */}
                     <a href='/' onMouseEnter={() => {handleMouseEnter('home')}} onMouseLeave={() => {handleMouseLeave('home')}} style={{color: 'white', textDecoration: isHovered.home ? 'underline' : 'none', fontSize: 24,}}>Home</a>
@@ -78,6 +91,7 @@ const NavBar = () => {
                 </div>
                 
             </div>
+            </ThemeProvider>
         </>
         
     )
