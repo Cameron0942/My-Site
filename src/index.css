@@ -3,6 +3,12 @@
 @import url("https://fonts.googleapis.com/css?family=Spline Sans Mono");
 @import url("https://fonts.googleapis.com/css?family=Inter");
 
+@media screen and (max-width: 1200px) {
+  footer {
+    font-size: 0.8rem;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;

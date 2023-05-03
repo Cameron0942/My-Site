@@ -13,8 +13,8 @@ const pinkTexture = require('../assets/pinkTexture.jpg');
 
 const Background = () => {
   const containerRef = useRef(null);
-  const windowHeight = useState(window.innerHeight);
-  const windowWidth = useState(window.innerWidth);
+  // const windowHeight = useState(window.innerHeight);
+  // const windowWidth = useState(window.innerWidth);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -156,7 +156,7 @@ const Background = () => {
         }
         }
         
-        sun.rotation.y += 0.001
+        sun.rotation.y -= 0.001
 
   
         // render the scene
@@ -170,8 +170,8 @@ const Background = () => {
 
       // resize the renderer when the window size changes
     const handleResize = () => {
-        const width = containerRef.clientWidth;
-        const height = containerRef.clientHeight;
+        const width = window.innerWidth;
+        const height = window.innerHeight;
         renderer.setSize(width, height);
         camera.aspect = width / height;
         camera.updateProjectionMatrix();

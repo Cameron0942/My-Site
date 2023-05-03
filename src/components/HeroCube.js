@@ -1,8 +1,12 @@
 //? REACT
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 //? THREE
 import * as THREE from 'three';
+
+//? MATERIAL UI
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 //? IMAGES
 const reactTexture = require('../assets/reactTexture.svg').default;
@@ -13,15 +17,27 @@ const javascriptTexture = require('../assets/javascriptTexture.svg').default;
 const javascriptTextureInvert = require('../assets/javascriptTexture-invert.svg').default;
 const reduxTexture = require('../assets/reduxTexture.svg').default;
 
+//? Responsive
+const theme = createTheme();
+
 const HeroCube = () => {
+  const notLg = useMediaQuery(theme.breakpoints.up('lg'));
+  const notMd = useMediaQuery(theme.breakpoints.up('md'));
+  const notSm = useMediaQuery(theme.breakpoints.up('sm'));
+
   const mountRef = useRef(null);
+
+  const [windowSize, setWindowSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight,
+  });
 
   useEffect(() => {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ alpha: true });
   
-    renderer.setSize(window.innerWidth / 2, window.innerHeight / 2);
+    renderer.setSize(window.innerWidth / ( notMd ? 2 : 2.5), window.innerHeight / ( notMd ? 2 : 2.5));
     mountRef.current.appendChild(renderer.domElement);
   
     const geometry = new THREE.BoxGeometry(3, 3, 3);
@@ -109,8 +125,23 @@ const HeroCube = () => {
     
   }, []);
 
+  const handleResize = () => {
+    setWindowSize({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    });
+    console.log(windowSize)
+  };
+
+  // useEffect(() => {
+  //   window.addEventListener('resize', handleResize);
+  //   return () => window.removeEventListener('resize', handleResize);
+  // }, []);
+
   return (
-    <div ref={mountRef}  />
+    <ThemeProvider theme={theme}>
+      <div ref={mountRef} />
+    </ThemeProvider>
   );
 };
 
