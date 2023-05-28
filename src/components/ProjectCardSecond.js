@@ -29,16 +29,15 @@ const ProjectCard = (projectTitle) => {
             <div style={{maxWidth: '70ch'}}>
                 <h1 style={{color: 'white', marginBottom: 8, fontSize: isLg ? 'auto' : '1.5em'}}>{title}</h1>
                 <p style={{color: 'white', marginBottom: 8, fontSize: isLg ? 'auto' : '0.75em', textShadow: '2px 2px black'}}>
-                    Coming Soon!<br></br><br></br>
+                    Feeling lucky? Try your hand at a game of Blackjack! This project was an exercise on the Redux.js library, as well as, an exercise in creating a React application with Vite instead of Create React App. Redux keeps track of the game state across multiple components. This made programming the game logic a more streamlined process. I used an open source playing card API and Axios to fetch the card deck. I also used Material UI for buttons, and to help keep the components organized.
                 </p>
                 <div style={{marginBottom: 8}}>
-                    <Chip label='React' style={{color: 'white', backgroundColor: 'green'}} />
-                    <Chip label='Express' color='success' />
-                    <Chip label='Node' color='success' />
-                    <Chip label='MongoDB' color='success' />
+                    <Chip label='React' color='success' />
+                    <Chip label='Redux' color='success' />
+                    <Chip label='Material UI' color='success' />
                 </div>
-                <a href='/'><img className='github-project' src={github}></img></a>
-                <a href='/'><img className='project-live-link' src={newtab}></img></a>
+                <a href='https://github.com/Cameron0942/blackjack-vite' target='_blank' rel="noreferrer"><img className='github-project' src={github} alt='link to github'></img></a>
+                <a href='https://cameron0942.github.io/blackjack-vite/' target='_blank' rel="noreferrer"><img className='project-live-link' src={newtab} alt='link to live projct'></img></a>
             </div>
         </ThemeProvider>
         </>

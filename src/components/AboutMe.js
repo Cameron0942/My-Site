@@ -48,7 +48,7 @@ const AboutMe = () => {
                     My name is Cameron. I'm a fullstack web developer based in Las Vegas, NV. I'm passionate about cutting-edge, pixel-perfect, responsive user interfaces, and dynamic user experiences.
                 </p>
                 <p style={{color: '#F7F7F7', marginTop: 20, fontSize: isLg ? '1.3rem' : '1.1rem'}}>
-                    My enthusiasm for web development began when I was teaching children the fundamentals of programming — at that time, I didn't imagine that tinkering with <b>HTML</b>, <b>CSS</b> and <b>JavaScript</b> could get this far, yet it turned out to be much more than that!
+                    My enthusiasm for web development began when I worked as a tutor mentoring children the fundamentals of programming. At that time, I didn't imagine that tinkering with <b>HTML</b>, <b>CSS</b> and <b>JavaScript</b> could get me this far, yet it turned out to be much more than that!
                 </p>
                 <p style={{color: '#F7F7F7', marginTop: 20, fontSize: isLg ? '1.3rem' : '1.1rem'}}>
                     Nowadays, I don't keep hacking around with HTML, CSS and vanilla JavaScript anymore — my focus now is to develop things for the real world by using them! And of course <b>React</b>, <b>Node.js</b>, <b>Express.js</b>, and many other frameworks and libraries that I work with every day.

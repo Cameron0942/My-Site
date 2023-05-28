@@ -45,3 +45,26 @@ footer {
 .hello-world {
   font-family: 'Spline Sans Mono', monospace;
 }
+
+.github-project:hover {
+  filter: invert(1);
+  transition: transform ease-in-out 0.2s;
+  transform: translateY(-8px);
+  border-radius: 50%;
+}
+
+.github-project:not(:hover){
+  transition: transform 0.2s ease-in-out;
+}
+
+.project-live-link:hover {
+  filter: invert(1);
+  transition: transform ease-in-out 0.2s;
+  transform: translateY(-8px);
+  border-radius: 5%;
+}
+
+.project-live-link:not(:hover){
+  transition: transform 0.2s ease-in-out;
+}
+

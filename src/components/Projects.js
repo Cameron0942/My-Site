@@ -8,6 +8,10 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 
 //? CUSTOM COMPONENTS
 import ProjectCard from './ProjectCard';
+import ProjectCardSecond from './ProjectCardSecond';
+
+//? IMAGES
+import blackjackImage from '../assets/blackjack-screenshot.png';
 
 //? Responsive
 const theme = createTheme();
@@ -40,11 +44,12 @@ const Projects = () => {
                     </Grid>
                     {/* <div style={{height: '1px', width: '100%', backgroundColor: 'red'}} /> */}
                     <Grid item xs={6} sx={{textAlign: 'center'}}>
-                        <img src='https://styles.redditmedia.com/t5_2su6s/styles/communityIcon_4g1uo0kd87c61.png' alt='Project 1' style={{borderRadius: '4px', maxHeight: isLg ? '25em' : '8.5em'}}></img>                    
+                        <img src={blackjackImage} alt='Project 1' style={{borderRadius: '40px', border: '1px solid rgba(0, 0, 0, 0.75)', maxHeight: isLg ? '25em' : '8.5em'}}></img>                    
                     </Grid>
                     <Grid item xs={6}>
                         <div style={{paddingRight: isLg ? 350 : 10}}>
-                            <ProjectCard projectTitle={Object.values(projects.second)} />
+                            {/* <ProjectCard projectTitle={Object.values(projects.second)} /> */}
+                            <ProjectCardSecond projectTitle={Object.values(projects.second)} />
                         </div>
                     </Grid>
                     {/* <div style={{height: '1px', width: '100%', backgroundColor: 'red'}} /> */}
