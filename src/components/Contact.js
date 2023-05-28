@@ -4,6 +4,7 @@ import React, { useRef, useEffect } from 'react';
 //? MATERIAL UI
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import Tooltip from '@mui/material/Tooltip';
 
 //? IMAGES
 const gmail_logo = require('../assets/gmail-icon.svg').default;
@@ -17,19 +18,22 @@ const logos = [
     {
         gmail: [
             gmail_logo,
-            'mailto:burnsc0942@gmail.com'
+            'mailto:burnsc0942@gmail.com',
+            'Email Address'
         ]
     },
     {
         github: [
             github_logo,
-            'https://github.com/Cameron0942'
+            'https://github.com/Cameron0942',
+            'GitHub Profile'
         ]
     },
     {
         linkedin: [
             linkedin_logo,
-            'https://www.linkedin.com/in/cameron--burns/'
+            'https://www.linkedin.com/in/cameron--burns/',
+            'LinkedIn Profile'
         ]
     }
 ];
@@ -52,7 +56,8 @@ const Contact = () => {
                         let bundle = linkInfo[Object.keys(linkInfo)];
                         let svg = bundle[0]
                         let link = bundle[1];
-                        return (<a href={link} target="_blank"  rel="noreferrer"><img src={svg} alt={linkInfo[Object.keys(linkInfo)]} style={{padding: 0, backgroundColor: 'white', borderRadius: '10px'}}></img></a>)
+                        let desc = bundle[2]
+                        return (<Tooltip title={desc}><a href={link} target="_blank"  rel="noreferrer"><img src={svg} alt={linkInfo[Object.keys(linkInfo)]} style={{padding: 0, backgroundColor: 'white', borderRadius: '10px'}}></img></a></Tooltip>)
                     })}
                 </div>
             </div>
