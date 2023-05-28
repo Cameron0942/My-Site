@@ -2,10 +2,10 @@
 import React, { useRef, useEffect } from 'react';
 
 //? MATERIAL UI
-import { Grid } from '@mui/material';
 import Chip from '@mui/material/Chip';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import Tooltip from '@mui/material/Tooltip';
 
 //? IMAGES
 const github = require('../assets/github-icon.svg').default;
@@ -36,8 +36,12 @@ const ProjectCard = (projectTitle) => {
                     <Chip label='Redux' color='success' />
                     <Chip label='Material UI' color='success' />
                 </div>
-                <a href='https://github.com/Cameron0942/blackjack-vite' target='_blank' rel="noreferrer"><img className='github-project' src={github} alt='link to github'></img></a>
-                <a href='https://cameron0942.github.io/blackjack-vite/' target='_blank' rel="noreferrer"><img className='project-live-link' src={newtab} alt='link to live projct'></img></a>
+                <Tooltip title="GitHub Repository">
+                    <a href='https://github.com/Cameron0942/blackjack-vite' target='_blank' rel="noreferrer"><img className='github-project' src={github} alt='link to github'></img></a>
+                </Tooltip>
+                <Tooltip title="Live Site">
+                    <a href='https://cameron0942.github.io/blackjack-vite/' target='_blank' rel="noreferrer"><img className='project-live-link' src={newtab} alt='link to live project'></img></a>
+                </Tooltip>
             </div>
         </ThemeProvider>
         </>

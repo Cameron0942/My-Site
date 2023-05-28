@@ -2,10 +2,10 @@
 import React, { useRef, useEffect } from 'react';
 
 //? MATERIAL UI
-import { Grid } from '@mui/material';
 import Chip from '@mui/material/Chip';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import Tooltip from '@mui/material/Tooltip';
 
 //? IMAGES
 const github = require('../assets/github-icon.svg').default;
@@ -37,8 +37,12 @@ const ProjectCard = (projectTitle) => {
                     <Chip label='Node' color='success' />
                     <Chip label='MongoDB' color='success' />
                 </div>
-                <a href='/'><img className='github-project' src={github}></img></a>
-                <a href='/'><img className='project-live-link' src={newtab}></img></a>
+                <Tooltip title="GitHub Repository">
+                    <a href='/'><img className='github-project' src={github}></img></a>
+                </Tooltip>
+                <Tooltip title="Live Site">
+                    <a href='/'><img className='project-live-link' src={newtab}></img></a>
+                </Tooltip>
             </div>
         </ThemeProvider>
         </>

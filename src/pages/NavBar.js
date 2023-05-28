@@ -81,7 +81,7 @@ const NavBar = () => {
             <div style={{backgroundColor: '#050816', opacity: 1, display: isLg ? 'flex' : 'none', flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingTop: 8}}>
                 <div style={{paddingLeft: 20}}>
                     {/* <a href='/' style={{}}><img src={art} alt='home_logo' style={{height: '5rem', borderRadius: '50%'}}></img></a> */}
-                    <a href='/' onMouseEnter={() => {handleMouseEnter('home')}} onMouseLeave={() => {handleMouseLeave('home')}} style={{color: 'white', textDecoration: isHovered.home ? 'underline' : 'none', cursor: isHovered.home ? 'pointer' : '', fontSize: 24,}}>Home</a>
+                    <a href='/' onMouseEnter={() => {handleMouseEnter('home')}} onMouseLeave={() => {handleMouseLeave('home')}} style={{color: 'white', textDecoration: isHovered.home ? 'underline' : 'none', cursor: isHovered.home ? 'pointer' : '', fontSize: 24,}}>{`{CB}`}</a>
                 </div>
                 
                 {/* <h1 style={{margin: 0, padding: 0, color: 'white'}} className='foreground'>Hello from foreground</h1> */}

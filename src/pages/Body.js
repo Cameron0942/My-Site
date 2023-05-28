@@ -11,6 +11,9 @@ import Hero from '../components/Hero';
 import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 
+//? MATERIAL UI
+import { Snackbar } from '@mui/material';
+
 //? IMAGES
 const github = require('../assets/github-icon.svg').default;
 const linkedin = require('../assets/linkedin-icon.svg').default;
@@ -20,26 +23,35 @@ const linkedinWhite = require('../assets/linkedin-white-icon.svg').default;
 //? Responsive
 const theme = createTheme();
 
-const copyToClipboard = () => {
-    // Get the text field and value
-    let copyText = document.getElementById("click-email").innerText;
-
-    // Write text to clipboard
-    navigator.clipboard.writeText(copyText);
-
-  // Alert the copied text
-  alert("Email copied to clipboard");
-};
-
 const Body = () => {
     const [isGitHovered, setIsGithovered] = useState(false);
     const [isLinkedHovered, setIsLinkedhovered] = useState(false);
     const [isEmailHovered, setIsEmailhovered] = useState(false);
 
+    const [snackbarOpen, setSnackbarOpen] = React.useState(false);
+  
     //* Responsive
     const isLg = useMediaQuery(theme.breakpoints.up('lg'));
     const isMd = useMediaQuery(theme.breakpoints.up('md'));
     const isSm = useMediaQuery(theme.breakpoints.up('sm'));
+    
+    //* When email is clicked
+    const handleSnackbarClick = () => {
+        // Get the text field and value
+        let copyText = document.getElementById("click-email").innerText;
+
+        // Write text to clipboard
+        navigator.clipboard.writeText(copyText);
+        setSnackbarOpen(true);
+    };
+    
+    const handleSnackbarClose = (event, reason) => {
+      if (reason === 'clickaway') {
+        return;
+      }
+  
+      setSnackbarOpen(false);
+    };
 
     //* Github hover
     const handleGitMouseEnter = () => {
@@ -104,8 +116,19 @@ const Body = () => {
                         </aside>
 
                         <aside style={{height: '88vh', right: '0.5em', color: 'white', position: 'fixed', zIndex: 20, display: isLg ? 'flex' : 'none', flexDirection: 'column', justifyContent: 'flex-end'}}>
-                            <span onMouseEnter={handleEmailMouseEnter} onMouseLeave={handleEmailMouseLeave} onClick={copyToClipboard} target='_blank' rel='noreferrer' style={{transform: 'rotate(90deg)', marginBottom: 90, textDecoration: 'none', color: isEmailHovered ? 'white' : 'black', cursor: 'pointer', paddingTop: '15px', paddingBottom: '15px', paddingRight: 0, paddingLeft: 0}}><p id='click-email'>burnsc0942@gmail.com</p></span>
+                            <span onMouseEnter={handleEmailMouseEnter} onMouseLeave={handleEmailMouseLeave} onClick={handleSnackbarClick} target='_blank' rel='noreferrer' style={{transform: 'rotate(90deg)', marginBottom: 90, textDecoration: 'none', color: isEmailHovered ? 'white' : 'black', cursor: 'pointer', paddingTop: '15px', paddingBottom: '15px', paddingRight: 0, paddingLeft: 0}}><p id='click-email'>burnsc0942@gmail.com</p></span>
                             <div style={{width: '2px', height: '8em', backgroundColor: 'black', marginLeft: 'auto', marginRight: 'auto'}} />
+                            <Snackbar
+                                open={snackbarOpen}
+                                autoHideDuration={5000}
+                                onClose={handleSnackbarClose}
+                                message="Email Copied to Clipboard 👍"
+                                anchorOrigin={{
+                                    vertical: 'bottom',
+                                    horizontal: 'right',
+                                  }}
+                                onClick={handleSnackbarClose}
+                            />
                         </aside>
                         <Hero />
                         <Projects />
