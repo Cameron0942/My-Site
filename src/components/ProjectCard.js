@@ -20,8 +20,8 @@ const ProjectCard = (projectTitle) => {
     title = title.replaceAll(',', '');
 
     const isLg = useMediaQuery(theme.breakpoints.up('lg'));
-    const isMd = useMediaQuery(theme.breakpoints.up('md'));
-    const isSm = useMediaQuery(theme.breakpoints.up('sm'));
+    // const isMd = useMediaQuery(theme.breakpoints.up('md'));
+    // const isSm = useMediaQuery(theme.breakpoints.up('sm'));
 
     return (
         <>

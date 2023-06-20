@@ -17,6 +17,7 @@ const theme = createTheme();
 const NavBar = () => {
     const [isHovered, setIsHovered] = useState({
         home: false,
+        skills: false,
         projects: false,
         contact: false,
         aboutMe: false
@@ -24,14 +25,18 @@ const NavBar = () => {
 
     //* Responsive
     const isLg = useMediaQuery(theme.breakpoints.up('lg'));
-    const isMd = useMediaQuery(theme.breakpoints.up('md'));
-    const isSm = useMediaQuery(theme.breakpoints.up('sm'));
+    // const isMd = useMediaQuery(theme.breakpoints.up('md'));
+    // const isSm = useMediaQuery(theme.breakpoints.up('sm'));
 
     const handleMouseEnter = (id) => {
         
         switch(id){
             case 'home':
                 setIsHovered(previousState => ({...previousState, home: true}));
+            break;
+
+            case 'skills':
+                setIsHovered(previousState => ({...previousState, skills: true}));
             break;
 
             case 'projects':
@@ -56,6 +61,10 @@ const NavBar = () => {
         switch(id){
             case 'home':
                 setIsHovered(previousState => ({...previousState, home: false}));
+            break;
+
+            case 'skills':
+                setIsHovered(previousState => ({...previousState, skills: false}));
             break;
 
             case 'projects':
@@ -91,6 +100,21 @@ const NavBar = () => {
                     {/* <a href='#projects' onMouseEnter={() => {handleMouseEnter('projects')}} onMouseLeave={() => {handleMouseLeave('projects')}} style={{color: 'white', textDecoration: isHovered.projects ? 'underline' : 'none', fontSize: 24}}>Projects</a> */}
                     {/* <a href='#contact' onMouseEnter={() => {handleMouseEnter('contact')}} onMouseLeave={() => {handleMouseLeave('contact')}} style={{color: 'white', textDecoration: isHovered.contact ? 'underline' : 'none', fontSize: 24}}>Contact</a> */}
                     {/* <a href='#about-me' onMouseEnter={() => {handleMouseEnter('aboutMe')}} onMouseLeave={() => {handleMouseLeave('aboutMe')}} style={{color: 'white', textDecoration: isHovered.aboutMe ? 'underline' : 'none', fontSize: 24}}>About Me</a> */}
+                    <Link
+                        to="skills"
+                        spy={true}
+                        smooth={true}
+                        duration={500}
+                        onMouseEnter={() => handleMouseEnter('skills')}
+                        onMouseLeave={() => handleMouseLeave('skills')}
+                        style={{
+                            color: 'white',
+                            textDecoration: isHovered.skills ? 'underline' : 'none',
+                            cursor: isHovered.skills ? 'pointer' : '',
+                            fontSize: 24,
+                        }}>
+                        Skills
+                    </Link>
                     <Link
                         to="projects"
                         spy={true}

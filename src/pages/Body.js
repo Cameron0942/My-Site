@@ -21,6 +21,8 @@ const linkedin = require('../assets/linkedin-icon.svg').default;
 const githubWhite = require('../assets/github-white-icon.svg').default;
 const linkedinWhite = require('../assets/linkedin-white-icon.svg').default;
 
+const BG_COLOR = '#19376D';
+
 //? Responsive
 const theme = createTheme();
 
@@ -33,8 +35,8 @@ const Body = () => {
   
     //* Responsive
     const isLg = useMediaQuery(theme.breakpoints.up('lg'));
-    const isMd = useMediaQuery(theme.breakpoints.up('md'));
-    const isSm = useMediaQuery(theme.breakpoints.up('sm'));
+    // const isMd = useMediaQuery(theme.breakpoints.up('md'));
+    // const isSm = useMediaQuery(theme.breakpoints.up('sm'));
     
     //* When email is clicked
     const handleSnackbarClick = () => {
@@ -98,7 +100,7 @@ const Body = () => {
                     width: '100%',
                     height: '100%',
                     zIndex: -1,
-                    background: 'linear-gradient(to bottom, rgba(255, 255, 255, 0) , #19376D 50%)',
+                    background: `linear-gradient(to bottom, rgba(255, 255, 255, 0) , ${BG_COLOR} 50%)`,
                 }
             }}>
 
@@ -110,6 +112,7 @@ const Body = () => {
                     position: 'relative',
                     zIndex: 1
                     }}>
+                        {/* Left and right fixed icons */}
                         <aside style={{height: '88vh', left: '0.5em', color: 'white', position: 'fixed', zIndex: 30, display: isLg ? 'flex' : 'none', flexDirection: 'column', justifyContent: 'flex-end'}}>
                             <a onMouseEnter={handleGitMouseEnter} onMouseLeave={handleGitMouseLeave} href='https://github.com/Cameron0942' target='_blank' rel='noreferrer'><img src={ isGitHovered ? githubWhite : github } alt='github link' style={{}} /></a>
                             <a onMouseEnter={handleLinkedMouseEnter} onMouseLeave={handleLinkedMouseLeave} href='https://www.linkedin.com/in/cameron--burns/' target='_blank' rel='noreferrer'><img src={ isLinkedHovered ? linkedinWhite : linkedin } alt='linkedin link' style={{}} /></a>

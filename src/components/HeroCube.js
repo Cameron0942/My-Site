@@ -23,7 +23,7 @@ const theme = createTheme();
 const HeroCube = () => {
   const isLg = useMediaQuery(theme.breakpoints.up('lg'));
   const isMd = useMediaQuery(theme.breakpoints.up('md'));
-  const isSm = useMediaQuery(theme.breakpoints.up('sm'));
+  // const isSm = useMediaQuery(theme.breakpoints.up('sm'));
 
   const mountRef = useRef(null);
 

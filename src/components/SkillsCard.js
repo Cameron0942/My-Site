@@ -3,69 +3,44 @@ import React from 'react'
 //? MATERIAL UI
 import { Box } from '@mui/material';
 
-//? IMAGES
-import reactIcon from '../assets/skills/icons8-react-400.png';
-import html5Icon from '../assets/skills/icons8-html5-240.png';
-import css3Icon from '../assets/skills/icons8-css3-240.png';
-import muiIcon from '../assets/skills/icons8-material-ui-240.png';
-import bootstrapIcon from '../assets/skills/icons8-bootstrap-240.png';
-import jqueryIcon from '../assets/skills/icons8-jquery-250.png';
-
-const bottomContainerStyles = {
-    display: 'flex',
-    justifyContent: 'space-evenly',
-};
-
-const underlayStyles = {
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-    paddingTop: 2,
-    paddingBottom: 10,
-    paddingLeft: 10,
-    paddingRight: 10,
-    borderRadius: '20px',
-    maxWidth: '21vw',
-};
-
 const titleStyles = {
     fontSize: '48px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-  };
+    color: 'white',
+    textShadow: '3px 3px 3px black'
+};
 
-const skills = [
-    {
-        React: reactIcon
-    },
-    {
-        HTML5: html5Icon
-    },
-    {
-        CSS3: css3Icon
-    },
-    {
-        MaterialUI: muiIcon
-    },
-    {
-        Bootstrap: bootstrapIcon
-    },
-    {
-        jQuery: jqueryIcon
-    },
-];
+const underlayStyles = {
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    paddingTop: 2,
+    paddingBottom: 2,
+    paddingLeft: 8,
+    paddingRight: 8,
+    borderRadius: '20px',
+    maxWidth: '21vw',
+    border: '1px rgba(0, 0, 0, 0.25) solid',
+    marginBottom: 1,
+    minWidth: '25em',
+};
 
-const SkillsCard = () => {
+
+const SkillsCard = ({skills, title}) => {
+    
   return (
         <Box sx={underlayStyles}>
-            <span style={titleStyles}>Frontend</span>
+            <span style={titleStyles}>{title}</span>
             <div style={{display: 'flex', flexDirection: 'row', flexWrap:'wrap', justifyContent: 'space-evenly'}}>
                 {skills.map((skill) => {
-                    let icon = Object.values(skill);
-                    let skillName = Object.keys(skill);
+                    let bundle = skill[Object.keys(skill)];
+                    let icon = bundle[0];
+                    let skillName = bundle[1];
+
                     return(
-                        <div style={{display: 'flex', flexDirection: 'column', textAlign: 'center'}}>
-                            <img src={icon} height={'100px'} width={'100px'} alt='react icon' />
-                            <span>{skillName}</span>
+                        <div key={Math.random()} style={{display: 'flex', flexDirection: 'column', textAlign: 'center', marginBottom: 15}}>
+                            <img src={icon} height={'110px'} width={'110px'} alt={skillName} />
+                            <span style={{color: 'whitesmoke', maxWidth: '110px', marginTop: 10}}>{skillName}</span>
                         </div>
                     )
                 })}

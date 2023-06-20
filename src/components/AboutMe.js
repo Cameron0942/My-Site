@@ -12,8 +12,8 @@ const AboutMe = () => {
     const [isBottom, setIsBottom] = useState(false);
 
     const isLg = useMediaQuery(theme.breakpoints.up('lg'));
-    const isMd = useMediaQuery(theme.breakpoints.up('md'));
-    const isSm = useMediaQuery(theme.breakpoints.up('sm'));
+    // const isMd = useMediaQuery(theme.breakpoints.up('md'));
+    // const isSm = useMediaQuery(theme.breakpoints.up('sm'));
   
     useEffect(() => {
         //* Hides overlay when at bottom of the screen

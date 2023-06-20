@@ -13,8 +13,8 @@ const theme = createTheme();
 
 const Hero = () => {
     const isLg = useMediaQuery(theme.breakpoints.up('lg'));
-    const isMd = useMediaQuery(theme.breakpoints.up('md'));
-    const isSm = useMediaQuery(theme.breakpoints.up('sm'));
+    // const isMd = useMediaQuery(theme.breakpoints.up('md'));
+    // const isSm = useMediaQuery(theme.breakpoints.up('sm'));
 
     return(
         <>
