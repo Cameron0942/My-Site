@@ -40,7 +40,7 @@ const Projects = () => {
                         </div>                    
                     </Grid>
                     <Grid item xs={6} sx={{textAlign: 'center'}}>
-                        <img src='https://styles.redditmedia.com/t5_2su6s/styles/communityIcon_4g1uo0kd87c61.png' alt='Project 1' style={{borderRadius: '4px', maxHeight: isLg ? '25em' : '8.5em'}}></img>
+                        <img src='https://styles.redditmedia.com/t5_2su6s/styles/communityIcon_4g1uo0kd87c61.png' alt='Project 1' style={{borderRadius: '4px', maxHeight: isLg ? '25em' : '7.5em'}}></img>
                     </Grid>
                     {/* <div style={{height: '1px', width: '100%', backgroundColor: 'red'}} /> */}
                     {/* End of projectcard 1 */}
@@ -65,7 +65,7 @@ const Projects = () => {
                         </div> 
                     </Grid>
                     <Grid item xs={6} sx={{textAlign: 'center'}}>
-                        <img src='https://styles.redditmedia.com/t5_2su6s/styles/communityIcon_4g1uo0kd87c61.png' alt='Project 1' style={{borderRadius: '4px', maxHeight: isLg ? '25em' : '8.5em'}}></img>
+                        <img src='https://styles.redditmedia.com/t5_2su6s/styles/communityIcon_4g1uo0kd87c61.png' alt='Project 1' style={{borderRadius: '4px', maxHeight: isLg ? '25em' : '7.5em'}}></img>
                     </Grid>
                     {/* <div style={{height: '1px', width: '100%', backgroundColor: 'red'}} />              */}
                     {/* End of projectcard 3 */}

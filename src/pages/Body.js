@@ -105,7 +105,7 @@ const Body = () => {
             }}>
 
                 <Box sx={{
-                    width: '98vw',
+                    width: isLg? '98vw' : '100vw',
                     height: 'auto',
                     padding: 0,
                     opacity: 1,
@@ -119,14 +119,14 @@ const Body = () => {
                             <div style={{width: '2px', height: '8em', backgroundColor: 'black', marginLeft: 'auto', marginRight: 'auto'}} />
                         </aside>
 
-                        <aside style={{height: '88vh', right: '0.5em', color: 'white', position: 'fixed', zIndex: 20, display: isLg ? 'flex' : 'none', flexDirection: 'column', justifyContent: 'flex-end'}}>
+                        <aside style={{height: '88vh', right: '-3em', color: 'white', position: 'fixed', zIndex: 20, display: isLg ? 'flex' : 'none', flexDirection: 'column', justifyContent: 'flex-end'}}>
                             <span onMouseEnter={handleEmailMouseEnter} onMouseLeave={handleEmailMouseLeave} onClick={handleSnackbarClick} target='_blank' rel='noreferrer' style={{transform: 'rotate(90deg)', marginBottom: 90, textDecoration: 'none', color: isEmailHovered ? 'white' : 'black', cursor: 'pointer', paddingTop: '15px', paddingBottom: '15px', paddingRight: 0, paddingLeft: 0, fontSize: '18px', fontWeight: '600'}}><p id='click-email'>cburnsdev@gmail.com</p></span>
                             <div style={{width: '2px', height: '8em', backgroundColor: 'black', marginLeft: 'auto', marginRight: 'auto'}} />
                             <Snackbar
                                 open={snackbarOpen}
                                 autoHideDuration={5000}
                                 onClose={handleSnackbarClose}
-                                message="📝 Email Copied to Clipboard 👍"
+                                message="📝 cburnsdev@gmail.com Copied to Clipboard 👍"
                                 anchorOrigin={{
                                     vertical: 'bottom',
                                     horizontal: 'right',

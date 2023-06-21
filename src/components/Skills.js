@@ -46,7 +46,7 @@ const topContainerStyles = {
 const bottomContainerStyles = {
     display: 'flex',
     justifyContent: 'space-evenly',
-    marginBottom: 120,
+    marginBottom: 420,
 };
 
   const frontendSkills = [
@@ -209,7 +209,7 @@ const cloud = [
     {
         aws: [
             awsIcon,
-            'AWS'
+            'Amazon Web Services'
         ]
     }
 ]
