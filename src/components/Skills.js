@@ -224,6 +224,9 @@ const Skills = () => {
             <h1 id='skills' style={{color: '#F7F7F7', fontSize: isLg ? '2.5em' : '2rem', textShadow: '2px 2px black', textDecoration: 'underline', textDecorationThickness: '2px', textUnderlineOffset: '10px', textDecorationColor: '#ba2649', textAlign: 'center', marginBottom: 25}}>
                 My Skills
             </h1>
+            <div style={{ textAlign: 'center', marginBottom: '5px', fontSize: '12px', color: 'white' }}>
+                Icons by <a href="https://icons8.com" target="_blank" rel="noopener noreferrer" style={{ color: '#1fb141', textDecoration: 'none' }}>Icons8</a>
+            </div>
             <div style={topContainerStyles}>
                 <SkillsCard skills={frontendSkills} title='Frontend' />
                 <SkillsCard skills={backendSkills} title='Backend' />

@@ -25,7 +25,7 @@ const Projects = () => {
         first: 'Social Media Platform',
         second: 'Blackjack Simulator',
         third: 'Task Management App'
-    }
+    };
 
     return (
         <>
