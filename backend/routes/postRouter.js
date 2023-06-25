@@ -8,6 +8,11 @@ const emailRoute = require("../controllers/emailRoute");
 
 postRouter.use(express.json());
 
+postRouter.post("/", (req, res, next) => {
+    console.log("POST request received");
+    next(); // Call next() to pass the request to the next route handler
+  });
+
 // postRouter.post("/", getColorPalette);
 postRouter.post("/", emailRoute);
 
