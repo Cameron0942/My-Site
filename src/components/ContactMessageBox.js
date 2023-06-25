@@ -72,7 +72,7 @@ const ContactMessageBox = () => {
         //! try doing local IPAddress:5000 (5000 or whatever port server.js is running on) in place of localhost
         //! make sure `server.js` is running on PM2
         try {
-            await axios.post('http://localhost:5000/', payload);
+            await axios.post(process.env.REACT_APP_BACKEND_IP, payload);
             // const response = await axios.post('http://localhost:50000/', payload);
             // const result = response.data.result;
             // console.log('result', response);

@@ -14,16 +14,6 @@ app.get('/', function (req, res) {
   res.sendFile(__dirname, 'build', 'index.html');
 });
 
-// let exampleData = {
-//   name: 'Cameron',
-//   age: 30,
-//   shirt: 'red'
-// }
-
-// app.post('/', function (req, res) {
-//   console.log('POST request received');
-//   res.status(200).json(exampleData);
-// });
 
 app.use("/", postRouter);
 

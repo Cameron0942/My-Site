@@ -1,6 +1,8 @@
+require('dotenv').config();
+
 //? SENDINBLUE
 let SibApiV3Sdk = require('sib-api-v3-sdk');
-const apiKey = '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';
+const apiKey = process.env.SENDINBLUE_API_KEY;
 const sendinblue = new SibApiV3Sdk.TransactionalEmailsApi();
 sendinblue.apiClient.authentications['api-key'].apiKey = apiKey;
 
