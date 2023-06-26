@@ -21,9 +21,9 @@ const reduxTexture = require('../assets/reduxTexture.svg').default;
 const theme = createTheme();
 
 const HeroCube = () => {
-  const notLg = useMediaQuery(theme.breakpoints.up('lg'));
-  const notMd = useMediaQuery(theme.breakpoints.up('md'));
-  const notSm = useMediaQuery(theme.breakpoints.up('sm'));
+  const isLg = useMediaQuery(theme.breakpoints.up('lg'));
+  const isMd = useMediaQuery(theme.breakpoints.up('md'));
+  // const isSm = useMediaQuery(theme.breakpoints.up('sm'));
 
   const mountRef = useRef(null);
 
@@ -37,7 +37,7 @@ const HeroCube = () => {
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ alpha: true });
   
-    renderer.setSize(window.innerWidth / ( notMd ? 2 : 2.5), window.innerHeight / ( notMd ? 2 : 2.5));
+    renderer.setSize(window.innerWidth / ( isMd ? 2 : 2.3), window.innerHeight / ( isMd ? 2 : 2.3));
     mountRef.current.appendChild(renderer.domElement);
   
     const geometry = new THREE.BoxGeometry(3, 3, 3);
@@ -66,7 +66,7 @@ const HeroCube = () => {
     const cube = new THREE.Mesh(geometry, materials);
     scene.add(cube);
   
-    camera.position.z = 5;
+    camera.position.z = isLg ? 5 : 6.2;
   
     // add lights to the scene for 3 point lighting
     const light1 = new THREE.PointLight(0xffffff, 1, 0);
