@@ -24,7 +24,8 @@ const NavBar = () => {
         skills: false,
         projects: false,
         contact: false,
-        aboutMe: false
+        aboutMe: false,
+        resume: false,
     });
 
     //* Responsive
@@ -63,6 +64,10 @@ const NavBar = () => {
                 setIsHovered(previousState => ({...previousState, aboutMe: true}));
             break;
 
+            case 'resume':
+                setIsHovered(previousState => ({...previousState, resume: true}));
+            break;
+
             default:
                 break;
         }
@@ -89,6 +94,10 @@ const NavBar = () => {
 
             case 'aboutMe':
                 setIsHovered(previousState => ({...previousState, aboutMe: false}));
+            break;
+
+            case 'resume':
+                setIsHovered(previousState => ({...previousState, resume: false}));
             break;
 
             default:
@@ -160,6 +169,16 @@ const NavBar = () => {
                         duration={500}>
                         <MenuItem onClick={handleClose} sx={{fontSize: '24px', color: 'whitesmoke', borderTop: '1px solid black', textShadow: '2px 2px black'}}>About Me</MenuItem>
                     </Link>
+                    <MenuItem onClick={handleClose} sx={{ fontSize: '24px', color: 'whitesmoke', borderTop: '1px solid black', textShadow: '2px 2px black' }}>
+                        <a
+                            href="https://drive.google.com/file/d/1xmHJKBcLY_PWzCGYVCo4oHnhsUd_cJMF/view?usp=sharing"
+                            target='_blank'
+                            rel="noreferrer"
+                            style={{ color: 'whitesmoke', textDecoration: 'none' }}
+                        >
+                            Resume
+                        </a>
+                    </MenuItem>
                 </Menu>
             </div>
         <ThemeProvider theme={theme}>
@@ -236,6 +255,21 @@ const NavBar = () => {
                         }}>
                         About Me
                     </Link>
+                    <a
+                        onMouseEnter={() => handleMouseEnter('resume')}
+                        onMouseLeave={() => handleMouseLeave('resume')}
+                        style={{
+                            color: 'white',
+                            textDecoration: isHovered.resume ? 'underline' : 'none',
+                            cursor: isHovered.resume ? 'pointer' : '',
+                            fontSize: 24,
+                        }}
+                        href='https://docs.google.com/document/d/10w5201ekcSOjhcrFfEEKdkHgOqU2Gdw5/edit?usp=sharing&ouid=101743174563743248121&rtpof=true&sd=true'
+                        target='_blank'
+                        rel="noreferrer"
+                        >
+                        Resume
+                    </a>
                 </div>
             </div>
             </ThemeProvider>
