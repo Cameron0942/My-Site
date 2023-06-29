@@ -9,9 +9,11 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 //? CUSTOM COMPONENTS
 import ProjectCard from './ProjectCard';
 import ProjectCardSecond from './ProjectCardSecond';
+import ProjectCardThird from './ProjectCardThird';
 
 //? IMAGES
 import blackjackImage from '../assets/blackjack-screenshot.png';
+import groceryBuddyImage from '../assets/grocery-buddy-img.png';
 
 //? Responsive
 const theme = createTheme();
@@ -24,7 +26,7 @@ const Projects = () => {
     const projects = {
         first: 'Social Media Platform',
         second: 'Blackjack Simulator',
-        third: 'Task Management App'
+        third: 'Grocery Buddy'
     };
 
     return (
@@ -61,11 +63,12 @@ const Projects = () => {
 
                     <Grid item xs={6}>
                         <div style={{paddingLeft: isLg ? 350 : 10}}>
-                            <ProjectCard projectTitle={Object.values(projects.third)} />
+                            {/* <ProjectCard projectTitle={Object.values(projects.third)} /> */}
+                            <ProjectCardThird projectTitle={Object.values(projects.third)} />
                         </div> 
                     </Grid>
                     <Grid item xs={6} sx={{textAlign: 'center'}}>
-                        <img src='https://styles.redditmedia.com/t5_2su6s/styles/communityIcon_4g1uo0kd87c61.png' alt='Project 1' style={{borderRadius: '4px', maxHeight: isLg ? '25em' : '7.5em'}}></img>
+                        <img src={groceryBuddyImage} alt='Project 1' style={{borderRadius: '40px', border: '1px solid rgba(0, 0, 0, 0.75)', maxHeight: isLg ? '25em' : '100%', maxWidth: isLg ? '100%' : '45vw'}}></img>
                     </Grid>
                     {/* <div style={{height: '1px', width: '100%', backgroundColor: 'red'}} />              */}
                     {/* End of projectcard 3 */}
