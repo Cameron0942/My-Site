@@ -3,9 +3,10 @@ import React, { useRef, useEffect } from 'react';
 
 //? MATERIAL UI
 import Chip from '@mui/material/Chip';
+import Alert from '@mui/material/Alert';
+import Tooltip from '@mui/material/Tooltip';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
-import Tooltip from '@mui/material/Tooltip';
 
 //? IMAGES
 const github = require('../assets/github-icon.svg').default;
@@ -34,7 +35,8 @@ const ProjectCardThird = (projectTitle) => {
                     organizes your items by grocery aisle. This project was an exercise in interacting with the OpenAI API as well as web hosting with private API keys.
                     Redux.JS also was a huge help in maintaining application state across components.
                 </p>
-                <div style={{marginBottom: 8}}>
+                <Alert severity="warning">This is hosted using the free-tier of Render's servers, which can cause delays. Please be patient as it may take anywhere from 30 seconds to 1 minute to load.</Alert>
+                <div style={{marginBottom: 8, marginTop: 8}}>
                     <Chip label='React' color='success' />
                     <Chip label='Redux' color='success' />
                     <Chip label='OpenAI' color='success' />

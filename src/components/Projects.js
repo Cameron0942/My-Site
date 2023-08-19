@@ -32,12 +32,18 @@ const Projects = () => {
   };
 
   const projectDescriptions = {
-      desc1: 'Coming Soon! A fullstack application that aims to help users keep track of bugs and events in their projects. It will have features such as: account creation, bug/task creation, role-based authorization, graphical tracking of completed vs in-progress bugs, and more!',
+      desc1: 'Coming Soon! A fullstack application that aims to help users keep track of bugs and other events in their projects. It will have features such as: account creation, bug/task creation, role-based authorization, graphical tracking of completed vs in-progress bugs, and more!',
       
       desc2: 'Feeling lucky? Try your hand at a game of Blackjack! This project was an exercise on the Redux.js library, as well as, an exercise in creating a React application with Vite instead of Create React App. Redux keeps track of the game state across multiple components. This made programming the game logic a more streamlined process. I used an open source playing card API and Axios to fetch the card deck. I also used Material UI for buttons, and to help keep the components organized.',
 
       desc3: `Grocery Buddy is a mobile application that helps you keep track of your groceries. If you're anything like me you may find it loathesome when you're unsure which aisle your groceries are located. Grocery Buddy keeps track of your grocery list, and with the help of OpenAI's ChatGPT, organizes your items by grocery aisle. This project was an exercise in interacting with the OpenAI API as well as web hosting with private API keys. Redux.JS also was a huge help in maintaining application state across components.`
     };
+
+    const projectLinks = {
+        bugTracker: ['/', '/'],
+        blackjack: ['https://github.com/Cameron0942/blackjack-vite', 'https://cameron0942.github.io/blackjack-vite/'],
+        groceryBuddy: ['https://github.com/Cameron0942/grocery-buddy', 'https://grocery-buddy-hz65.onrender.com/grocery-buddy/'],
+    }
 
   return (
     <>
@@ -65,18 +71,21 @@ const Projects = () => {
               title="Bug Tracker"
               media={bugTrackerImage}
               desc={projectDescriptions.desc1}
+              links={projectLinks.bugTracker}
             />
 
             <ProjectCardResponsive
               title="Grocery Buddy"
               media={groceryBuddyImage}
               desc={projectDescriptions.desc3}
+              links={projectLinks.groceryBuddy}
             />
 
             <ProjectCardResponsive
               title="Blackjack Simulator"
               media={blackjackImage}
               desc={projectDescriptions.desc2}
+              links={projectLinks.blackjack}
             />
           </div>
         )}
