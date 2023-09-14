@@ -34,6 +34,32 @@ import npmIcon from '../assets/skills/icons8-npm-480.png';
 import figmaIcon from '../assets/skills/icons8-figma-480.png';
 import jsIcon from '../assets/skills/icons8-javascript-480.png';
 import cppIcon from '../assets/skills/icons8-c-480.png';
+import renderLogo from '../assets/skills/render-logo.webp';
+
+//* Frontend skills images
+const html5svg = require('../assets/html-5.svg').default;
+const reactsvg = require('../assets/skills/react.svg').default;
+const css3svg = require('../assets/skills/css-3.svg').default;
+const muisvg = require('../assets/skills/material-ui.svg').default;
+const bootstrapsvg = require('../assets/skills/bootstrap.svg').default;
+const jquerysvg = require('../assets/skills/jquery.svg').default;
+const reduxsvg = require('../assets/skills/redux.svg').default;
+
+//* Backend skills images
+const nodejssvg = require('../assets/skills/node-js.svg').default;
+const ubuntusvg = require('../assets/skills/ubuntu.svg').default;
+const nginxsvg = require('../assets/skills/nginx.svg').default;
+const mysqlsvg = require('../assets/skills/mysql.svg').default;
+
+//* Tools images
+const vscodesvg = require('../assets/skills/vscode.svg').default;
+const gitsvg = require('../assets/skills/git.svg').default;
+const npmsvg = require('../assets/skills/npm.svg').default;
+const postmansvg = require('../assets/skills/postman.svg').default;
+const figmasvg = require('../assets/skills/figma.svg').default;
+
+//* Languages images
+const golangsvg = require('../assets/skills/go.svg').default;
 
 //? Responsive
 const theme = createTheme();
@@ -52,37 +78,37 @@ const bottomContainerStyles = {
   const frontendSkills = [
     {
         react: [
-            reactIcon,
+            reactsvg,
             'React',
         ]
     },
     {
         HTML5: [
-            html5Icon,
+            html5svg,
             'HTML5',
         ] 
     },
     {
         CSS3: [
-            css3Icon,
+            css3svg,
             'CSS3',
         ]
     },
     {
         MaterialUI: [
-            muiIcon,
+            muisvg,
             'Material UI',
         ]
     },
     {
         Bootstrap: [
-            bootstrapIcon,
+            bootstrapsvg,
             'Bootstrap',
         ] 
     },
     {
         jQuery: [
-            jqueryIcon,
+            jquerysvg,
             'jQuery',
         ]
     },
@@ -94,22 +120,22 @@ const bottomContainerStyles = {
     },
     {
         redux: [
-            reduxIcon,
+            reduxsvg,
             'Redux.js'
         ]
     },
-    {
-        nextjs: [
-            nextjsIcon,
-            'Next.js'
-        ]
-    }
+    // {
+    //     nextjs: [
+    //         nextjsIcon,
+    //         'Next.js'
+    //     ]
+    // }
 ];
 
 const backendSkills = [
     {
         nodeJS: [
-            nodeJSIcon,
+            nodejssvg,
             'Node.js'
         ]
     },
@@ -121,13 +147,13 @@ const backendSkills = [
     },
     {
         ubuntu: [
-            ubuntuIcon,
+            ubuntusvg,
             'Ubuntu'
         ]
     },
     {
         nginx: [
-            nginxIcon,
+            nginxsvg,
             'Nginx'
         ]
     },
@@ -136,19 +162,25 @@ const backendSkills = [
             mongodbIcon,
             'MongoDB'
         ]
+    },
+    {
+        mysql: [
+            mysqlsvg,
+            'MySQL'
+        ]
     }
 ];
 
 const tools = [
     {
         vscode: [
-            vscodeIcon,
+            vscodesvg,
             'Visual Studio Code'
         ]
     },
     {
         git: [
-            gitIcon,
+            gitsvg,
             'Git'
         ]
     },
@@ -160,19 +192,19 @@ const tools = [
     },
     {
         npm: [
-            npmIcon,
+            npmsvg,
             'Node Package Manager'
         ]
     },
     {
         postman: [
-            postmanIcon,
+            postmansvg,
             'Postman'
         ]
     },
     {
         figma: [
-            figmaIcon,
+            figmasvg,
             'Figma'
         ]
     }
@@ -192,9 +224,9 @@ const languages = [
         ]
     },
     {
-        cpp: [
-            cppIcon,
-            'C++'
+        golang: [
+            golangsvg,
+            'GoLang'
         ]
     }
 ];
@@ -204,6 +236,12 @@ const cloud = [
         digitalocean: [
             digitaloceanIcon,
             'Digital Ocean'
+        ]
+    },
+    {
+        render: [
+            renderLogo,
+            'Render'
         ]
     },
     {
@@ -234,7 +272,7 @@ const Skills = () => {
             </div>
             <div style={bottomContainerStyles}>
                 <SkillsCard skills={languages} title='Languages' />
-                <SkillsCard skills={cloud} title='Cloud' />
+                <SkillsCard skills={cloud} title='Cloud Hosting' />
             </div>
         </ThemeProvider>
         </>
