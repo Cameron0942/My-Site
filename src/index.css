@@ -57,6 +57,10 @@ footer {
   transition: transform 0.2s ease-in-out;
 }
 
+.project-live-link {
+  height: 50px;
+}
+
 .project-live-link:hover {
   filter: invert(1);
   transition: transform ease-in-out 0.2s;

@@ -11,22 +11,23 @@ import Alert from "@mui/material/Alert";
 
 //? IMAGES
 const github = require("../assets/github-icon.svg").default;
-const newtab = require("../assets/newtab-icon.png");
+const newtab = require("../assets/newtab-icon.svg").default;
 
-export default function BasicCard({ title, media, desc, links }) {
+export default function BasicCard({ title, media, desc, links, tech }) {
   return (
-    <Card sx={{ backgroundColor: "#ecf3ff", marginBottom: 4 }}>
+    <Card sx={{ backgroundColor: "#ecf3ff", marginBottom: 4, padding: 0.8 }}>
       <CardContent>
         <Typography
           sx={{ fontSize: 24, textAlign: "center" }}
           color="text.primary"
+          fontWeight="bold"
           gutterBottom
         >
           {title}
         </Typography>
         <CardMedia
           component="img"
-          alt="Bug Tracker Screenshot"
+          alt="ChanceWave"
           height="auto"
           image={media}
           style={{ maxWidth: "100%", borderRadius: "4px", marginBottom: 5 }}
@@ -34,10 +35,12 @@ export default function BasicCard({ title, media, desc, links }) {
         <Typography variant="body2">{desc}</Typography>
       </CardContent>
       {title === "Grocery Buddy" && (
-        <Alert severity="warning" sx={{marginLeft: 1, marginRight: 1, outline: '1px black solid'}}>
-          This is hosted using the free-tier of Render's servers, which can cause
-          delays. Please be patient as it can take anywhere from 30 seconds to 1
-          minute to load.
+        <Alert
+          severity="warning"
+          sx={{ marginLeft: 1, marginRight: 1, outline: "1px black solid" }}
+        >
+          This project is hosted using the free-tier of Render's servers, which can
+          cause delays. Please be patient as it can take anywhere from 30 to 60 seconds to load.
         </Alert>
       )}
       <CardActions>
@@ -60,6 +63,34 @@ export default function BasicCard({ title, media, desc, links }) {
           </a>
         </Tooltip>
       </CardActions>
+      <Tooltip>
+        {title === "ChanceWave" && (
+          <>
+            <img src={tech.react} alt="react" />
+            <img src={tech.materialui} alt="material ui" />
+            <img src={tech.sass} alt="sass" />
+            <img src={tech.nodejs} alt="nodejs" />
+            <img src={tech.express} alt="express" />
+            <img src={tech.mongodb} alt="mongodb" />{" "}
+          </>
+        )}
+        {title === "Grocery Buddy" && (
+          <>
+            <img src={tech.react} alt="react" />
+            <img src={tech.bootstrap} alt="sass" />
+            <img src={tech.materialui} alt="material ui" />
+            <img src={tech.redux} alt="nodejs" />
+            <img src={tech.openai} alt="express" />
+          </>
+        )}
+        {title === "Blackjack Simulator" && (
+          <>
+            <img src={tech.react} alt="react" />
+            <img src={tech.materialui} alt="material ui" />
+            <img src={tech.redux} alt="redux" />
+          </>
+        )}
+      </Tooltip>
     </Card>
   );
 }

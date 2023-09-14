@@ -14,6 +14,7 @@ import ProjectCardResponsive from "./ProjectsCardResponsive";
 
 //? IMAGES
 import bugTrackerImage from "../assets/bug-tracker-ss.png";
+import chanceWaveImage from "../assets/ChanceWaveSS.png";
 import blackjackImage from "../assets/blackjack-screenshot.png";
 import groceryBuddyImage from "../assets/grocery-buddy-img.png";
 
@@ -26,24 +27,47 @@ const Projects = () => {
   // const isSm = useMediaQuery(theme.breakpoints.up('sm'));
 
   const projects = {
-    first: "Bug Tracker",
+    first: "ChanceWave",
     second: "Blackjack Simulator",
     third: "Grocery Buddy",
   };
 
   const projectDescriptions = {
-      desc1: 'Coming Soon! A fullstack application that aims to help users keep track of bugs and other events in their projects. It will have features such as: account creation, bug/task creation, role-based authorization, graphical tracking of completed vs in-progress bugs, and more!',
-      
-      desc2: 'Feeling lucky? Try your hand at a game of Blackjack! This project was an exercise on the Redux.js library, as well as, an exercise in creating a React application with Vite instead of Create React App. Redux keeps track of the game state across multiple components. This made programming the game logic a more streamlined process. I used an open source playing card API and Axios to fetch the card deck. I also used Material UI for buttons, and to help keep the components organized.',
+    desc1:
+      "ChanceWave is your go-to web app for making decisions effortlessly. With ChanceWave, individuals or groups can easily create lists of options. Whether you're planning a night out with friends or simply need help making choices, ChanceWave simplifies the process and adds an element of surprise to your decision-making. This app uses an advanced random number generation algorithm to ensure fair selections. Say goodbye to indecision and hello to ChanceWave!",
 
-      desc3: `Grocery Buddy is a mobile application that helps you keep track of your groceries. If you're anything like me you may find it loathesome when you're unsure which aisle your groceries are located. Grocery Buddy keeps track of your grocery list, and with the help of OpenAI's ChatGPT, organizes your items by grocery aisle. This project was an exercise in interacting with the OpenAI API as well as web hosting with private API keys. Redux.JS also was a huge help in maintaining application state across components.`
-    };
+    desc2:
+      "Feeling lucky? Try your hand at a game of Blackjack! This project was an exercise on the Redux.js library, as well as, an exercise in creating a React application with Vite instead of Create React App. Redux keeps track of the game state across multiple components. This made programming the game logic a more streamlined process. I used an open source playing card API and Axios to fetch the card deck. I also used Material UI for buttons, and to help keep the components organized.",
 
-    const projectLinks = {
-        bugTracker: ['/', '/'],
-        blackjack: ['https://github.com/Cameron0942/blackjack-vite', 'https://cameron0942.github.io/blackjack-vite/'],
-        groceryBuddy: ['https://github.com/Cameron0942/grocery-buddy', 'https://grocery-buddy-hz65.onrender.com/grocery-buddy/'],
-    }
+    desc3: `Grocery Buddy is a mobile application that helps you keep track of your groceries. If you're anything like me you may find it loathesome when you're not sure which aisle your groceries are located. Grocery Buddy keeps track of your grocery list, and with the help of OpenAI's ChatGPT, organizes your items by grocery aisle. This project was an exercise in interacting with the OpenAI API as well as web hosting with private API keys. Redux.JS also was a huge help in maintaining application state across components.`,
+  };
+
+  const projectLinks = {
+    bugTracker: [
+      "https://github.com/Cameron0942/decision-maker",
+      "https://brilliant-lokum-f95939.netlify.app/",
+    ],
+    blackjack: [
+      "https://github.com/Cameron0942/blackjack-vite",
+      "https://cameron0942.github.io/blackjack-vite/",
+    ],
+    groceryBuddy: [
+      "https://github.com/Cameron0942/grocery-buddy",
+      "https://grocery-buddy-hz65.onrender.com/grocery-buddy/",
+    ],
+  };
+
+  const tech = {
+    react: "https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB",
+    redux: "https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white",
+    materialui: "https://img.shields.io/badge/Material%20UI-007FFF?style=for-the-badge&logo=mui&logoColor=white",
+    sass: "https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white",
+    bootstrap: "https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white",
+    nodejs: "https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white",
+    express: "https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white",
+    mongodb: "https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white",
+    openai: "https://img.shields.io/badge/OpenAI-168363?style=for-the-badge&logo=openai&logoColor=white",
+  };
 
   return (
     <>
@@ -62,16 +86,17 @@ const Projects = () => {
             marginBottom: 25,
           }}
         >
-          Featured Projects
+          Projects
         </h1>
 
         {!isLg && (
           <div style={{ padding: "3%" }}>
             <ProjectCardResponsive
-              title="Bug Tracker"
-              media={bugTrackerImage}
+              title="ChanceWave"
+              media={chanceWaveImage}
               desc={projectDescriptions.desc1}
               links={projectLinks.bugTracker}
+              tech={tech}
             />
 
             <ProjectCardResponsive
@@ -79,6 +104,7 @@ const Projects = () => {
               media={groceryBuddyImage}
               desc={projectDescriptions.desc3}
               links={projectLinks.groceryBuddy}
+              tech={tech}
             />
 
             <ProjectCardResponsive
@@ -86,6 +112,7 @@ const Projects = () => {
               media={blackjackImage}
               desc={projectDescriptions.desc2}
               links={projectLinks.blackjack}
+              tech={tech}
             />
           </div>
         )}
@@ -108,7 +135,7 @@ const Projects = () => {
             </Grid>
             <Grid item xs={6} sx={{ textAlign: "center" }}>
               <img
-                src={bugTrackerImage}
+                src={chanceWaveImage}
                 alt="Project 1"
                 style={{
                   borderRadius: "40px",
