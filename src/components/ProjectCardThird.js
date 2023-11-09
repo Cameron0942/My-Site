@@ -45,20 +45,18 @@ const ProjectCardThird = (projectTitle) => {
               textShadow: "2px 2px black",
             }}
           >
-            Grocery Buddy is a mobile application that helps you keep track of
-            your groceries. If you're anything like me you may find it
-            loathesome when you're not sure which aisle your groceries are
-            located. Grocery Buddy keeps track of your grocery list, and with
-            the help of OpenAI's ChatGPT, organizes your items by grocery aisle.
-            This project was an exercise in interacting with the OpenAI API as
-            well as web hosting with private API keys. Redux.js also was a huge
-            help in maintaining application state across components.
+            Grocery Buddy is a web application that helps you keep track of your
+            groceries in an efficient way. This app keeps track of your grocery list, and with
+            the help of OpenAI's ChatGPT, organizes your items by grocery aisle for you.
+            Grocery Buddy can also analyze your list and suggest recipes
+            that closely match the items you were going to buy anyway. Try it out!
           </p>
-          <Alert severity="warning">
-            This project is hosted using the free-tier of Render's servers, which can
-            cause delays. Please be patient as it may take anywhere from 30 to
-            60 seconds to load.
-          </Alert>
+          {/* Old warning about slow server times */}
+          {/* <Alert severity="warning">
+            This project is hosted using the free-tier of Render's servers,
+            which can cause delays. Please be patient as it may take anywhere
+            from 30 to 60 seconds to load.
+          </Alert> */}
           <div style={{ marginBottom: 8, marginTop: 8 }}>
             {/* Old technology Chips */}
             {/* <Chip label='React' color='success' />
@@ -103,7 +101,7 @@ const ProjectCardThird = (projectTitle) => {
           </Tooltip>
           <Tooltip title="Live Site">
             <a
-              href="https://grocery-buddy-hz65.onrender.com/grocery-buddy/"
+              href="https://grocery-buddy-beta.vercel.app/"
               target="_blank"
               rel="noreferrer"
             >

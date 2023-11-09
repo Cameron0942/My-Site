@@ -34,7 +34,8 @@ export default function BasicCard({ title, media, desc, links, tech }) {
         />
         <Typography variant="body2">{desc}</Typography>
       </CardContent>
-      {title === "Grocery Buddy" && (
+      {/* Old alert for slow server  */}
+      {/* {title === "Grocery Buddy" && (
         <Alert
           severity="warning"
           sx={{ marginLeft: 1, marginRight: 1, outline: "1px black solid" }}
@@ -42,7 +43,7 @@ export default function BasicCard({ title, media, desc, links, tech }) {
           This project is hosted using the free-tier of Render's servers, which can
           cause delays. Please be patient as it can take anywhere from 30 to 60 seconds to load.
         </Alert>
-      )}
+      )} */}
       <CardActions>
         <Tooltip title="GitHub Repository">
           <a href={links[0]} target="_blank" rel="noreferrer">
