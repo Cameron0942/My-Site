@@ -16,7 +16,7 @@ import ProjectCardResponsive from "./ProjectsCardResponsive";
 import bugTrackerImage from "../assets/bug-tracker-ss.png";
 import chanceWaveImage from "../assets/ChanceWaveSS.png";
 import blackjackImage from "../assets/blackjack-screenshot.png";
-import groceryBuddyImage from "../assets/grocery-buddy-img.png";
+import groceryBuddyImage from "../assets/grocery-buddy-ss.png";
 
 //? Responsive
 const theme = createTheme();
@@ -32,6 +32,7 @@ const Projects = () => {
     third: "Grocery Buddy",
   };
 
+  //! Mobile ONLY project descriptions
   const projectDescriptions = {
     desc1:
       "ChanceWave is your go-to web app for making decisions effortlessly. With ChanceWave, individuals or groups can easily create lists of options. Whether you're planning a night out with friends or simply need help making choices, ChanceWave simplifies the process and adds an element of surprise to your decision-making. This app uses an advanced random number generation algorithm to ensure fair selections. Say goodbye to indecision and hello to ChanceWave!",
@@ -39,7 +40,8 @@ const Projects = () => {
     desc2:
       "Feeling lucky? Try your hand at a game of Blackjack! This project was an exercise on the Redux.js library, as well as, an exercise in creating a React application with Vite instead of Create React App. Redux keeps track of the game state across multiple components. This made programming the game logic a more streamlined process. I used an open source playing card API and Axios to fetch the card deck. I also used Material UI for buttons, and to help keep the components organized.",
 
-    desc3: `Grocery Buddy is a mobile application that helps you keep track of your groceries. If you're anything like me you may find it loathesome when you're not sure which aisle your groceries are located. Grocery Buddy keeps track of your grocery list, and with the help of OpenAI's ChatGPT, organizes your items by grocery aisle. This project was an exercise in interacting with the OpenAI API as well as web hosting with private API keys. Redux.JS also was a huge help in maintaining application state across components.`,
+    desc3:
+      "Grocery Buddy is a web application that helps you keep track of your groceries in an efficient way. This app keeps track of your grocery list, and with the help of OpenAI's ChatGPT, organizes your items by grocery aisle for you. Grocery Buddy can also analyze your list and suggest recipes that closely match the items you were going to buy anyway. Try it out!",
   };
 
   const projectLinks = {
@@ -53,20 +55,28 @@ const Projects = () => {
     ],
     groceryBuddy: [
       "https://github.com/Cameron0942/grocery-buddy",
-      "https://grocery-buddy-hz65.onrender.com/grocery-buddy/",
+      "https://grocery-buddy-beta.vercel.app/",
     ],
   };
 
   const tech = {
-    react: "https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB",
-    redux: "https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white",
-    materialui: "https://img.shields.io/badge/Material%20UI-007FFF?style=for-the-badge&logo=mui&logoColor=white",
+    react:
+      "https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB",
+    redux:
+      "https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white",
+    materialui:
+      "https://img.shields.io/badge/Material%20UI-007FFF?style=for-the-badge&logo=mui&logoColor=white",
     sass: "https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white",
-    bootstrap: "https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white",
-    nodejs: "https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white",
-    express: "https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white",
-    mongodb: "https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white",
-    openai: "https://img.shields.io/badge/OpenAI-168363?style=for-the-badge&logo=openai&logoColor=white",
+    bootstrap:
+      "https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white",
+    nodejs:
+      "https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white",
+    express:
+      "https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white",
+    mongodb:
+      "https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white",
+    openai:
+      "https://img.shields.io/badge/OpenAI-168363?style=for-the-badge&logo=openai&logoColor=white",
   };
 
   return (
