@@ -85,6 +85,14 @@ const ProjectCardThird = (projectTitle) => {
               src="https://img.shields.io/badge/OpenAI-168363?style=for-the-badge&logo=openai&logoColor=white"
               alt="OpenAI"
             />
+            <img
+              src="https://img.shields.io/badge/Node%20js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white"
+              alt="NodeJS"
+            />
+            <img
+              src="https://img.shields.io/badge/Express%20js-000000?style=for-the-badge&logo=express&logoColor=white"
+              alt="ExpressJS"
+            />
           </div>
           <Tooltip title="GitHub Repository">
             <a
