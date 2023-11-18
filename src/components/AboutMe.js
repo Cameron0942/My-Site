@@ -42,7 +42,7 @@ const AboutMe = () => {
           id="about-me"
           style={{
             height: isLg ? "145vh" : "185vh",
-            margin: "0 0 0 0",
+            margin: "0 0 2% 0",
             textAlign: "center",
             textShadow: "1px 1px black",
             background: isBottom
@@ -57,6 +57,7 @@ const AboutMe = () => {
               paddingTop: 60,
               paddingLeft: "5%",
               paddingRight: "5%",
+              marginBottom: "200px",
             }}
           >
             <h1

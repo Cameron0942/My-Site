@@ -105,7 +105,7 @@ const Body = () => {
             }}>
 
                 <Box sx={{
-                    width: isLg? '98vw' : '100vw',
+                    width: '100vw',
                     height: 'auto',
                     padding: 0,
                     opacity: 1,

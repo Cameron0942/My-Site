@@ -136,10 +136,11 @@ const Projects = () => {
               marginLeft: "auto",
               marginRight: "auto",
               marginBottom: 25,
+              paddingRight: isLg ? "4%" : 0,
             }}
           >
             <Grid item xs={6}>
-              <div style={{ paddingLeft: isLg ? 350 : 10 }}>
+              <div style={{ paddingLeft: isLg ? "20%" : 10, paddingRight: isLg ? 15 : 0 }}>
                 <ProjectCard projectTitle={Object.values(projects.first)} />
               </div>
             </Grid>
@@ -171,7 +172,7 @@ const Projects = () => {
               ></img>
             </Grid>
             <Grid item xs={6}>
-              <div style={{ paddingRight: isLg ? 350 : 10 }}>
+              <div style={{ paddingRight: isLg ? 15 : 0, paddingLeft: isLg ? "20%" : 10 }}>
                 {/* <ProjectCard projectTitle={Object.values(projects.second)} /> */}
                 <ProjectCardSecond
                   projectTitle={Object.values(projects.second)}
@@ -182,7 +183,7 @@ const Projects = () => {
             {/* End of projectcard 2 */}
 
             <Grid item xs={6}>
-              <div style={{ paddingLeft: isLg ? 350 : 10 }}>
+              <div style={{ paddingLeft: isLg ? "20%" : 10, paddingRight: isLg ? 15 : 0 }}>
                 {/* <ProjectCard projectTitle={Object.values(projects.third)} /> */}
                 <ProjectCardThird
                   projectTitle={Object.values(projects.third)}
