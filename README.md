@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# Portfolio Website 
+# [https://www.cameronburnsdev.com/](https://www.cameronburnsdev.com/)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Screenshot](https://i.postimg.cc/JMTcys1N/portfolio-ss.png)
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+This is my personal portfolio website, showcasing my projects and skills. The application is built using the MERN (MongoDB, Express.js, React, Node.js) stack. It features a modern and responsive design, with various sections highlighting different aspects of my work and expertise.
 
-### `npm start`
+## Frontend Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React:** Utilizing the latest version of React (v18.2.0) for a dynamic and efficient user interface.
+- **Material-UI:** Styling components with Material-UI (v4.12.4) and incorporating icons from MUI (v5.11.16).
+- **Three.js Integration:** Implementing 3D graphics using Three.js (v0.151.3) through React Three Fiber (v6.0.13).
+- **Scroll Animation:** Enhancing user experience with smooth scrolling using React Scroll (v1.8.9).
+- **API Integration:** Connecting with external services using Axios (v1.4.0) and the Sendinblue API SDK (v8.5.0).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Backend Features
 
-### `npm test`
+- **Express Server:** Building a robust backend server using Express.js (v4.16.2). Express is a fast, unopinionated, minimalist web framework for Node.js, providing a set of features for building web and mobile applications.
+- **CORS Handling:** Managing Cross-Origin Resource Sharing (CORS) with the CORS package (v2.8.5) to ensure secure communication between the frontend and backend, especially when making requests from different origins.
+- **Environment Variables:** Managing configurations with the dotenv package (v16.3.1). Using environment variables helps secure sensitive information, such as API keys or database connection strings.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+### Frontend
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Navigate to the `frontend` directory.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+cd frontend
+```
+```bash
+npm install
+```
+```bash
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Backend
+```bash
+cd backend
+```
+```bash
+npm install
+```
+```bash
+npm start
+```
+```bash
+MONGODB_URI=your_mongodb_uri
+SENDINBLUE_API_KEY=your_sendinblue_api_key
+```
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
