@@ -1,7 +1,7 @@
 # Portfolio Website 
 # [https://www.cameronburnsdev.com/](https://www.cameronburnsdev.com/)
 
-![Screenshot](https://i.postimg.cc/JMTcys1N/portfolio-ss.png)
+[![Screenshot](https://i.postimg.cc/JMTcys1N/portfolio-ss.png)](https://www.cameronburnsdev.com/)
 
 ## Description
 
